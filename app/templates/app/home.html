@@ -1,0 +1,102 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block banner_slider %}
+<!--Banner Slider-->
+ <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'app/images/banner/bakery1.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app/images/banner/bakery2.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app/images/banner/bakery3.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app/images/banner/bakery4.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+<div class="container my-3" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+    <div class="left-container">
+      <button class="menu-button">Menu</button>
+      <button class="order-now-button">Order Now</button>
+      <h1>Freshly Baked With Love...</h1>
+      <h6>The Bakery hopes to be more than just City's best bakery. To make sure that every food item we give is a treat to the palette and the eyes, we hold ourselves to high standards of quality. We work hard to maintain consistency so that every customer receives the same consistently gratifying experience while enjoying the wide range of goods we have to offer. Our offerings fluctuate to highlight the best seasonal ingredients and the extraordinary creativity of our chefs.
+      </h6>
+
+    </div>
+    <div class="right-container">
+      <img src="{% static 'app/images/banner/hehe.jpg' %}" class="d-block w-100" alt="landing page">
+    </div>
+  </div>
+<!-- End Banner Slider -->
+{% endblock banner_slider %}
+
+{% block main-content %}
+<!-- 1st Product Slider -->
+<div class="container-fluid " style="background-color: #ece6d54d; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+    <div class="m-3">
+     <h2 style="color: #8a4832;">Todays Items</h2>
+
+     <!-- Slider 1 -->
+     <div class="owl-carousel" id="slider1" >
+      {% for items in Featured %}
+        <a href="{% url 'product-detail' items.id %}" class="btn"><div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span></div></a>
+<!--      <div class="item"><img src="{% static 'app/images/product/Tiramisu.jpg' %}" alt="" height="200px"><span class="fw-bold">Tiramisu</span><br><span class="fs-5">Rs. 300.00</span></div>-->
+<!--      <div class="item"><img src="{% static 'app/images/product/vanilacupcake.jpg' %}" alt="" height="200px"><span class="fw-bold">Vanila Cupcake</span><br><span class="fs-5">Rs. 400.00</span></div>-->
+<!--      <div class="item"><img src="{% static 'app/images/product/stawberrycake.jpg' %}" alt="" height="200px"><span class="fw-bold">Stawberry Cake</span><br><span class="fs-5">Rs. 700.00</span></div>-->
+      {% endfor %}
+     </div>
+    </div>
+    <!-- End 1st Product Slider -->
+    <!-- End Payment Info Section -->
+
+    <!-- 2nd Product Slider -->
+    <div class="mx-3">
+     <h2 style="color: #8a4832;">Breads</h2>
+     <!-- Slider 2 -->
+     <div class="owl-carousel" id="slider2">
+      <div class="item"><img src="{% static 'app/images/product/brd1.png' %}" alt="" height="200px"><span class="fw-bold">Product 1</span><br><span class="fs-5">Rs. 500</span></div>
+      <div class="item"><img src="{% static 'app/images/product/brd2.png' %}" alt="" height="200px"><span class="fw-bold">Product 2</span><br><span class="fs-5">Rs. 300</span></div>
+      <div class="item"><img src="{% static 'app/images/product/brd3.png' %}" alt="" height="200px"><span class="fw-bold">Product 3</span><br><span class="fs-5">Rs. 100</span></div>
+      <div class="item"><img src="{% static 'app/images/product/bread1.png' %}" alt="" height="200px"><span class="fw-bold">Product 4</span><br><span class="fs-5">Rs. 700</span></div>
+     </div>
+    </div>
+    <!-- End 2nd Product Slider -->
+
+
+    <div class="mx-3">
+     <h2 style="color: #8a4832;">Pastries</h2>
+     <!-- Slider 2 -->
+     <div class="owl-carousel" id="slider3">
+      <div class="item"><img src="{% static 'app/images/product/cooks3.png' %}" alt="" height="200px"><span class="fw-bold">Product 1</span><br><span class="fs-5">Rs. 500</span></div>
+      <div class="item"><img src="{% static 'app/images/product/pst2.png' %}" alt="" height="200px"><span class="fw-bold">Product 2</span><br><span class="fs-5">Rs. 300</span></div>
+      <div class="item"><img src="{% static 'app/images/product/pst3.png' %}" alt="" height="200px"><span class="fw-bold">Product 3</span><br><span class="fs-5">Rs. 100</span></div>
+      <div class="item"><img src="{% static 'app/images/product/bread2.png' %}" alt="" height="200px"><span class="fw-bold">Product 4</span><br><span class="fs-5">Rs. 700</span></div>
+     </div>
+    </div>
+
+    <div class="mx-3">
+     <h2 style="color: #8a4832;">Doughnuts</h2>
+     <!-- Slider 2 -->
+     <div class="owl-carousel" id="slider4">
+      <div class="item"><img src="{% static 'app/images/product/doughnut.png' %}" alt="" height="200px"><span class="fw-bold">Product 1</span><br><span class="fs-5">Rs. 500</span></div>
+      <div class="item"><img src="{% static 'app/images/product/donuts2.png' %}" alt="" height="200px"><span class="fw-bold">Product 2</span><br><span class="fs-5">Rs. 300</span></div>
+      <div class="item"><img src="{% static 'app/images/product/donuts3.png' %}" alt="" height="200px"><span class="fw-bold">Product 3</span><br><span class="fs-5">Rs. 100</span></div>
+      <div class="item"><img src="{% static 'app/images/product/donuts4.png' %}" alt="" height="200px"><span class="fw-bold">Product 4</span><br><span class="fs-5">Rs. 700</span></div>
+     </div>
+    </div>
+</div>
+{% endblock main-content %}
