@@ -59,18 +59,18 @@
          </ul>
          <form class="d-flex">
            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-           <button class="btn btn-warning" type="submit">A</button>
+           <button class="btn btn-warning" type="submit">{{ request.user.username.0|capfirst }}</button>
          </form>
          <div>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           {% if request.user.is_authenticated %}
            <li class="nav-item dropdown mx-2">
               <a class="nav-link dropdown-toggle text-white" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Ashish
+                  {{request.user.username|capfirst}}
               </a>
               <ul class="dropdown-menu" aria-labelledby="profileDropdown">
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><a class="dropdown-item" href="#">Orders</a></li>
+                <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                <li><a class="dropdown-item" href="{% url 'orders' %">Orders</a></li>
                 <li><a class="dropdown-item" href="{% url 'changepassword' %}">Change Password</a></li>
                 <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
               </ul>
@@ -96,24 +96,104 @@
     {% block main-content %} {% endblock main-content %}
 
     <!-- Start Footer -->
-    <footer class="container-fluid bg-Danger text-center p-2 mt-5" style="background-color:#894E3F">
-    <nav>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a style="color: #000;text-decoration: none"  href="#">Home</a></li>
-        <li class="list-inline-item"><a style="color: #000;text-decoration: none" href="#">Products</a></li>
-        <li class="list-inline-item"><a style="color: #000;text-decoration: none" href="#">Services</a></li>
-        <li class="list-inline-item"><a style="color: #000; text-decoration: none" href="#">Blog</a></li>
-      </ul>
-    </nav>
-    <div class="bottom-sections mt-3" style="color:#000">
-      <div class="about-us">
-        <h4>About Us</h4>
+     <footer
+          class="text-center text-lg-start text-white"
+          style="background-color: #1c2331"
+          >
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h2 class="text-uppercase fw-bold">BakeHub</h2>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              At BakeHub, we're passionate about creating delicious and unique baked goods that bring joy to every bite.
+                Our menu includes a variety of breads, pastries, cakes, and other treats made from scratch with the highest-quality ingredients.
+                Whether you're in the mood for a croissant, a slice of cake, or a fresh loaf of bread, we've got you covered.
+                We also offer catering services for events of all sizes. Come visit us and taste the BakeHub difference!
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h5 class="text-uppercase fw-bold">Products</h5>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="#!" class="text-white">Cakes</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Cupcakes</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Breads</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Dessert</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Doughnuts</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Pastries</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h5 class="text-uppercase fw-bold">Navigate</h5>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="#!" class="text-white">Home</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">About</a>
+            </p>
+            <p>
+              <a href="{% url 'orders' %}" class="text-white">Orders</a>
+            </p>
+            <p>
+              <a href="{% url 'profile' %}" class="text-white">Profile</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h5 class="text-uppercase fw-bold">Contact</h5>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p><i class="fas fa-home mr-3"></i> Naxal-06, Kathmandu</p>
+            <p><i class="fas fa-envelope mr-3"></i> bakehub@example.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
       </div>
-      <div class="contact-us">
-        <h4>Contact Us</h4>
-      </div>
-    </div>
-</footer>
+    </section>
+  </footer>
  <!-- End Footer -->
 
     <!-- Jquery -->
