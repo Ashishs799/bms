@@ -47,19 +47,17 @@
 {% block main-content %}
 <!-- 1st Product Slider -->
 <div class="container-fluid" style="background-color: #ece6d54d; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
-    <div class="m-3">
+    <div class="m-3" >
      <h2 style="color: #8a4832;">Todays Items</h2>
 
      <!-- Slider 1 -->
-     <div class="owl-carousel" id="slider1" >
+     <div class="owl-carousel" id="slider1"  >
       {% for items in Featured %}
-        <a href="{% url 'product-detail' items.id %}" class="btn"><div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span></div></a>
-<!--      <div class="item"><img src="{% static 'app/images/product/Tiramisu.jpg' %}" alt="" height="200px"><span class="fw-bold">Tiramisu</span><br><span class="fs-5">Rs. 300.00</span></div>-->
-<!--      <div class="item"><img src="{% static 'app/images/product/vanilacupcake.jpg' %}" alt="" height="200px"><span class="fw-bold">Vanila Cupcake</span><br><span class="fs-5">Rs. 400.00</span></div>-->
-<!--      <div class="item"><img src="{% static 'app/images/product/stawberrycake.jpg' %}" alt="" height="200px"><span class="fw-bold">Stawberry Cake</span><br><span class="fs-5">Rs. 700.00</span></div>-->
+        <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
+<!--         <a style="box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5);" href="#!" class="btn"><div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div></a>-->
       {% endfor %}
      </div>
-    </div>
+    </div><br>
     <!-- End 1st Product Slider -->
     <!-- End Payment Info Section -->
 
