@@ -14,7 +14,7 @@
        {{fm.label_tag}} {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small><br>
       </div>
      {% endfor %}
-     <small><a style="color:#dc3545; position:absolute; top:22rem;" href="{% url 'password_reset' %}">Forget Password?</a> </small> <br>
+     <small><a style="color:#dc3545; position:absolute; top:22rem;" href="{% url 'password-reset' %}">Forget Password?</a> </small> <br>
      <input type="submit" class="btn btn-success mt-4" value="Login" style="background-color: #842029;border-color:#842029;width:100px;">
      <br>
      <div class="text-center text-Danger fw bold"><small>Don't have account? <a  href="{% url 'customerregistration' %}" class="text-danger">Create an account</a></small></div>

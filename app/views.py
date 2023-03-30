@@ -46,8 +46,8 @@ def address(request):
 def orders(request):
  return render(request, 'app/orders.html')
 
-def change_password(request):
- return render(request, 'app/changepassword.html')
+# def change_password(request):
+#  return render(request, 'app/changepassword.html')
 
 def mobile(request):
  return render(request, 'app/mobile.html')
