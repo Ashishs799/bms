@@ -76,7 +76,7 @@
               </ul>
             </li>
             <li class="nav-item mx-2">
-             <a href="{% url 'add-to-cart' %}" class="nav-link text-white"><span class="badge bg-danger">0</span> Cart </a>
+             <a href="{% url 'showcart' %}" class="nav-link text-white"><span class="badge bg-danger">0</span> Cart </a>
            {% else %}
             </li>
             <li class="nav-item mx-2">
@@ -204,5 +204,13 @@
     <script src="{% static 'app/js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'app/js/all.min.js' %}"></script>
     <script src="{% static 'app/js/myscript.js' %}"></script>
+    <script>
+      var menuButton = document.querySelector('.menu-button');
+      var contentDiv = document.querySelector('.mx-3');
+
+      menuButton.addEventListener('click', function() {
+        contentDiv.scrollIntoView({ behavior: 'smooth' });
+      });
+    </script>
   </body>
 </html>
