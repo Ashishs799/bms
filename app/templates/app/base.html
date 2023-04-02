@@ -24,19 +24,19 @@
     <title>BakeHub | {% block title %} {% endblock title %} </title>
   </head>
   <body style="background-color: #fff">
-    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #D8A47F; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);height:75px">
+    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #934713; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);height:75px">
      <div class="container">
-       <a class="navbar-brand" href="/">BakeHub</a>
+       <a class="navbar-brand" href="/"><img src="{% static 'app/images/icons/bakelogo.png' %}" style="width:73px; height:73px;" alt="BakeHub"/></a>
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
        </button>
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left:48.5rem;">
            <li class="nav-item">
-             <a class="nav-link active" aria-current="page" href="/">Home</a>
+             <a class="nav-link active" aria-current="page" style="color:#000;" href="/">Home</a>
            </li>
            <li class="nav-item dropdown">
-             <a class="nav-link dropdown-toggle text-white" href="#" id="bakeryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             <a style="color:#000 !important;" class="nav-link dropdown-toggle text-white" href="#" id="bakeryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                Menu
              </a>
              <ul class="dropdown-menu" aria-labelledby="menuDropdown">
@@ -48,24 +48,25 @@
              </ul>
            </li>
            <li class="nav-item dropdown">
-             <a class="nav-link dropdown-toggle text-white" href="#" id="fashionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-               About
-             </a>
+             <a style="color:#000 !important;" class="nav-link dropdown-toggle text-white" href="#" id="fashionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About
+              </a>
+
              <ul class="dropdown-menu" aria-labelledby="Aboutdropdown">
                <li><a class="dropdown-item" href="#">About Us</a></li>
                <li><a class="dropdown-item" href="#">Contact us</a></li>
              </ul>
            </li>
          </ul>
-         <form class="d-flex">
-
-           <button class="btn btn-warning" type="submit">{{ request.user.username.0|capfirst }}</button>
-         </form>
          <div>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           {% if request.user.is_authenticated %}
-           <li class="nav-item dropdown mx-2">
-              <a class="nav-link dropdown-toggle text-white" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+            <li class="nav-item mx-2">
+             <a  href="{% url 'showcart' %}" class="nav-link text-white="><span class="badge" style="color:#000; background-color:#dc354500;">{{totalitem}}</span><img src="{% static 'app/images/icons/shopcart.png' %}" alt="Cart"/></a>
+
+            <li class="nav-item dropdown mx-2">
+              <a style="color:#000;" class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   {{request.user.username|capfirst}}
               </a>
               <ul class="dropdown-menu" aria-labelledby="profileDropdown">
@@ -75,15 +76,16 @@
                 <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
               </ul>
             </li>
-            <li class="nav-item mx-2">
-             <a href="{% url 'showcart' %}" class="nav-link text-white"><span class="badge bg-danger">0</span> Cart </a>
+            <form class="d-flex">
+              <button style="width:34px; height:31px; line-height:18px; background-color:#b09258;" class="btn" type="submit">{{ request.user.username.0|capfirst }}</button>
+           </form>
            {% else %}
             </li>
             <li class="nav-item mx-2">
-             <a href="{% url 'login' %}" class="nav-link text-white">Login</a>
+             <a href="{% url 'login' %}" class="nav-link text-white"><button type="button"  style="broder-radius:15px" class="btn btn-outline-dark btn-sm">Login</button></a>
             </li>
             <li class="nav-item mx-2">
-             <a href="{% url 'customerregistration' %}" class="nav-link text-white">Registration</a>
+             <a href="{% url 'customerregistration' %}" class="nav-link text-white"><button type="button" style="broder-radius:15px" class="btn btn-outline-dark btn-sm">Registration</button></a>
             </li>
             {% endif %}
           </ul>
