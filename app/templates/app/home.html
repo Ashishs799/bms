@@ -32,8 +32,11 @@
     <div class="left-container">
       <button style="outline: none; background-color:#894e3f;border-color:#894e3f; color:#fff; width:8rem;" class="menu-button">Menu</button>
       <h1>Freshly Baked With Love...</h1>
-      <h6>The Bakery hopes to be more than just City's best bakery. To make sure that every food item we give is a treat to the palette and the eyes, we hold ourselves to high standards of quality. We work hard to maintain consistency so that every customer receives the same consistently gratifying experience while enjoying the wide range of goods we have to offer. Our offerings fluctuate to highlight the best seasonal ingredients and the extraordinary creativity of our chefs.
-      </h6>
+      <h6><i>The Bakery hopes to be more than just City's best bakery.
+          To make sure that every food item we give is a treat to the palette and the eyes, we hold ourselves to high standards of quality.
+          We work hard to maintain consistency so that every customer receives the same consistently gratifying experience while enjoying the wide range of goods we have to offer.
+          Our offerings fluctuate to highlight the best seasonal ingredients and the extraordinary creativity of our chefs.
+      </i></h6>
 
     </div>
     <div class="right-container">
@@ -58,12 +61,33 @@
     </div><br>
     <!-- End 1st Product Slider -->
     <!-- End Payment Info Section -->
+    <div class="mx-3">
+     <i><h2 style="color: #8a4832; margin-left:40rem;">Cakes</h2></i>
+     <!-- Slider 2 -->
+     <div class="owl-carousel" id="slider2">
+         {% for items in Cake %}
+        <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
+<!--         <a style="box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5);" href="#!" class="btn"><div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div></a>-->
+      {% endfor %}
+     </div>
+    </div><br>
+
+    <div class="mx-3">
+     <i><h2 style="color: #8a4832; margin-left:40rem;">Cupcakes</h2></i>
+     <!-- Slider 2 -->
+     <div class="owl-carousel" id="slider3">
+         {% for items in Cupcake %}
+        <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
+<!--         <a style="box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5);" href="#!" class="btn"><div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div></a>-->
+      {% endfor %}
+     </div>
+    </div><br>
 
     <!-- 2nd Product Slider -->
     <div class="mx-3">
      <i><h2 style="color: #8a4832; margin-left:40rem;">Breads</h2></i>
      <!-- Slider 2 -->
-     <div class="owl-carousel" id="slider2">
+     <div class="owl-carousel" id="slider4">
          {% for items in Bread %}
         <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
 <!--         <a style="box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5);" href="#!" class="btn"><div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div></a>-->
@@ -78,7 +102,7 @@
     <div class="mx-3">
      <i><h2 style="color: #8a4832; margin-left:40rem;">Pastries</h2></i>
      <!-- Slider 2 -->
-     <div class="owl-carousel" id="slider3">
+     <div class="owl-carousel" id="slider5">
          {% for items in Pastries %}
             <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
 <!--         <a style="box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5);" href="#!" class="btn"><div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div></a>-->
@@ -90,7 +114,7 @@
     <div class="mx-3">
      <i><h2 style="color: #8a4832; margin-left:40rem;">Doughnuts</h2></i>
      <!-- Slider 2 -->
-     <div class="owl-carousel" id="slider4">
+     <div class="owl-carousel" id="slider6">
          {% for items in Doughnut %}
             <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
          {% endfor %}
