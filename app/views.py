@@ -149,6 +149,19 @@ def orders(request):
   totalitem = len(Cart.objects.filter(user=request.user))
  return render(request, 'app/orders.html',{'order_placed':op,'totalitem':totalitem})
 
+
+# def change_password(request):
+#  return render(request, 'app/changepassword.html')
+
+# def mobile(request):
+#  return render(request, 'app/mobile.html')
+
+# def login(request):
+#  return render(request, 'app/login.html')
+
+# def customerregistration(request):
+#  return render(request, 'app/customerregistration.html')
+
 class CustomerRegistrationView(View):
  def get(self, request):
   form = CustomerRegistrationForm()
@@ -191,6 +204,11 @@ def payment_done(request):
    OrderPlaced(user=user, customer=customer, product=c.product, quantity=c.quantity).save()
    c.delete()
  return redirect("orders",{'totalitem':totalitem})
+
+# class ProfileView(View):
+#  def get(self, request):
+#   form = CustomerProfileForm()
+#   return render(request,'app/profile.html',{'form':form})
 
 @method_decorator(login_required, name='dispatch')
 class ProfileView(View):

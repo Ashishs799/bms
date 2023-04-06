@@ -50,7 +50,7 @@
 <!-- 1st Product Slider -->
 <div class="container-fluid" style="background-color: #ece6d54d; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
     <div class="m-3" >
-     <i><h2 style="color: #8a4832; margin-left:40rem;">Todays Items</h2></i>
+     <i><h2 style="color: #8a4832; margin-left:40rem; font-weight:bold;">Todays Items</h2></i>
 
      <!-- Slider 1 -->
      <div class="owl-carousel" id="slider1"  >
@@ -62,7 +62,7 @@
     <!-- End 1st Product Slider -->
     <!-- End Payment Info Section -->
     <div class="mx-3">
-     <i><h2 style="color: #8a4832; margin-left:40rem;">Cakes</h2></i>
+     <i><h2 style="color: #8a4832; margin-left:40rem; font-weight:bold;">Cakes</h2></i>
      <!-- Slider 2 -->
      <div class="owl-carousel" id="slider2">
          {% for items in Cake %}
@@ -73,7 +73,7 @@
     </div><br>
 
     <div class="mx-3">
-     <i><h2 style="color: #8a4832; margin-left:40rem;">Cupcakes</h2></i>
+     <i><h2 style="color: #8a4832; margin-left:40rem; font-weight:bold;">Cupcakes</h2></i>
      <!-- Slider 2 -->
      <div class="owl-carousel" id="slider3">
          {% for items in Cupcake %}
@@ -85,22 +85,21 @@
 
     <!-- 2nd Product Slider -->
     <div class="mx-3">
-     <i><h2 style="color: #8a4832; margin-left:40rem;">Breads</h2></i>
+     <i><h2 style="color: #8a4832; margin-left:40rem; font-weight:bold;">Breads</h2></i>
      <!-- Slider 2 -->
      <div class="owl-carousel" id="slider4">
          {% for items in Bread %}
         <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
-<!--         <a style="box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5);" href="#!" class="btn"><div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div></a>-->
-      {% endfor %}
+         {% endfor %}-->
      </div>
     </div><br>
 
 
-    <!-- End 2nd Product Slider -->
+    <-- End 2nd Product Slider -->
 
 
     <div class="mx-3">
-     <i><h2 style="color: #8a4832; margin-left:40rem;">Pastries</h2></i>
+     <i><h2 style="color: #8a4832; margin-left:40rem; font-weight:bold;">Pastries</h2></i>
      <!-- Slider 2 -->
      <div class="owl-carousel" id="slider5">
          {% for items in Pastries %}
@@ -112,7 +111,7 @@
     </div><br>
 
     <div class="mx-3">
-     <i><h2 style="color: #8a4832; margin-left:40rem;">Doughnuts</h2></i>
+     <i><h2 style="color: #8a4832; margin-left:40rem; font-weight:bold;">Doughnuts</h2></i>
      <!-- Slider 2 -->
      <div class="owl-carousel" id="slider6">
          {% for items in Doughnut %}
@@ -120,7 +119,6 @@
          {% endfor %}
      </div>
     </div>
-
 
 </div>
 {% endblock main-content %}
