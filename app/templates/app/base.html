@@ -21,9 +21,12 @@
     <!-- landing page CSS-->
     <link rel="stylesheet" href="{% static 'app/css/landing.css' %}">
 
+<!--    <link rel="stylesheet" href="{% static 'app/css/about.css' %}">-->
+
     <title>BakeHub | {% block title %} {% endblock title %} </title>
   </head>
-  <body style="background-color: #F7C3CD">
+
+  <body style="background-color: #ffd2da">
     <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #934713; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);height:75px">
      <div class="container">
        <a class="navbar-brand" href="/"><img src="{% static 'app/images/icons/bakelogo.png' %}" style="width:73px; height:73px;" alt="BakeHub"/></a>
@@ -53,7 +56,7 @@
               </a>
 
              <ul class="dropdown-menu" aria-labelledby="Aboutdropdown">
-               <li><a class="dropdown-item" href="#">About Us</a></li>
+               <li><a class="dropdown-item" href="#">About Us</a></li>   <!--  {% url 'aboutus' %}-->
                <li><a class="dropdown-item" href="#">Contact us</a></li>
              </ul>
            </li>
@@ -85,7 +88,7 @@
              <a href="{% url 'login' %}" class="nav-link text-white"><button type="button"  style="broder-radius:15px" class="btn btn-outline-dark btn-sm">Login</button></a>
             </li>
             <li class="nav-item mx-2">
-             <a href="{% url 'customerregistration' %}" class="nav-link text-white"><button type="button" style="broder-radius:15px" class="btn btn-outline-dark btn-sm">Registration</button></a>
+             <a href="{% url 'customerregistration' %}" class="nav-link text-white"><button type="button" style="broder-radius:15px" class="btn btn-outline-dark btn-sm">Sign Up</button></a>
             </li>
             {% endif %}
           </ul>
@@ -163,7 +166,7 @@
                 style="width: 60px; background-color: #7c4dff; height: 2px"
                 />
             <p>
-              <a href="#!" class="text-white">Home</a>
+              <a href="/" class="text-white">Home</a>
             </p>
             <p>
               <a href="#!" class="text-white">About</a>
@@ -186,7 +189,7 @@
                 style="width: 60px; background-color: #7c4dff; height: 2px"
                 />
             <p><i class="fas fa-home mr-3"></i> Naxal-06, Kathmandu</p>
-            <p><i class="fas fa-envelope mr-3"></i> bakehub@example.com</p>
+            <p><i class="fas fa-envelope mr-3"></i> bakehub@gmail.com</p>
             <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
             <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
           </div>
