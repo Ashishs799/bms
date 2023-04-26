@@ -44,7 +44,7 @@
              <a style="color:#000 !important;" class="nav-link dropdown-toggle text-white" href="#" id="bakeryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                Menu
              </a>
-             <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+             <ul id="otherDropdownMenu" class="dropdown-menu" aria-labelledby="menuDropdown">
                <li><a class="dropdown-item" href="#" data-target="#slider2">Cake</a></li>
                 <li><a class="dropdown-item" href="#" data-target="#slider3">Cupcake</a></li>
                 <li><a class="dropdown-item" href="#" data-target="#slider4">Bread</a></li>
@@ -57,7 +57,7 @@
                 About
               </a>
 
-             <ul class="dropdown-menu" aria-labelledby="Aboutdropdown">
+             <ul id="AboutDropdownMenu" class="dropdown-menu" aria-labelledby="Aboutdropdown">
                <li><a class="dropdown-item" href="#">About Us</a></li>   <!--  {% url 'aboutus' %}-->
                <li><a class="dropdown-item" href="#">Contact us</a></li>
              </ul>
@@ -74,7 +74,7 @@
               <a style="color:#000;" class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   {{request.user.username|capfirst}}
               </a>
-              <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+              <ul id="ProfileDropdownMenu" class="dropdown-menu" aria-labelledby="profileDropdown">
                 <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
                 <li><a class="dropdown-item" href="{% url 'orders' %}">Orders</a></li>
                 <li><a class="dropdown-item" href="{% url 'passwordchange' %}">Change Password</a></li>
@@ -216,18 +216,7 @@
         contentDiv.scrollIntoView({ behavior: 'smooth' });
       });
     </script>
-  <script>
-  const dropdownItems = document.querySelectorAll('.dropdown-item');
-  dropdownItems.forEach(item => {
-    item.addEventListener('click', function(event) {
-      event.preventDefault();
-      const target = this.dataset.target;
-      const targetElement = document.querySelector(target);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-</script>
+
   </body>
+
 </html>
