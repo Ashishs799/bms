@@ -4,6 +4,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, User
 from django.contrib.auth.models import User
 from django.utils.translation import gettext, gettext_lazy as _
 from django.contrib.auth import password_validation
+
+# Creating forms for login and registration view
 class CustomerRegistrationForm(UserCreationForm):
     email = forms.CharField(required=True, widget=forms.EmailInput(attrs={'class': 'form-control'}))
     password1 = forms.CharField(label='Password',widget=forms.PasswordInput(attrs={'class':'form-control'}))

@@ -7,8 +7,7 @@ from django.db.models import Q
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-# def home(request):
-#  return render(request, 'app/home.html')
+
 
 class ProductView(View):
  def get(self, request):
@@ -70,6 +69,7 @@ def show_cart(request):
   else:
    return render(request,'app/emptycart.html',{'totalitem':totalitem})
 
+# To increase quantity of product in cart
 def plus_cart(request):
  if request.method == 'GET':
   prod_id = request.GET['prod_id']
@@ -91,6 +91,7 @@ def plus_cart(request):
     }
   return JsonResponse(data)
 
+# To decrease quantity of Products in cart
 def minus_cart(request):
  if request.method == 'GET':
   prod_id = request.GET['prod_id']
@@ -148,6 +149,7 @@ def orders(request):
   totalitem = len(Cart.objects.filter(user=request.user))
  return render(request, 'app/orders.html',{'order_placed':op,'totalitem':totalitem})
 
+
 # def change_password(request):
 #  return render(request, 'app/changepassword.html')
 
@@ -159,6 +161,7 @@ def orders(request):
 
 # def customerregistration(request):
 #  return render(request, 'app/customerregistration.html')
+
 class CustomerRegistrationView(View):
  def get(self, request):
   form = CustomerRegistrationForm()
@@ -201,10 +204,12 @@ def payment_done(request):
    OrderPlaced(user=user, customer=customer, product=c.product, quantity=c.quantity).save()
    c.delete()
  return redirect("orders",{'totalitem':totalitem})
+
 # class ProfileView(View):
 #  def get(self, request):
 #   form = CustomerProfileForm()
 #   return render(request,'app/profile.html',{'form':form})
+
 @method_decorator(login_required, name='dispatch')
 class ProfileView(View):
  def get(self,request):
