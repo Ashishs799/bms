@@ -229,3 +229,6 @@ class ProfileView(View):
    reg.save()
    messages.success(request,'Congratulations!! Your Profile is updated successfully!!')
   return render(request,'app/profile.html',{'form':form, 'active':'btn-outline-info'})
+
+def about(request):
+  return render(request, 'app/about.html')
