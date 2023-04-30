@@ -50,14 +50,25 @@
 <!-- 1st Product Slider -->
 <div class="container-fluid" style="background-color: #ece6d54d; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
     <div class="m-3" >
-     <i><h2 style="color: #8a4832; margin-left:40rem; font-weight:bold;">Todays Items</h2></i>
+     <i><h2 style="color: #8a4832; margin-left:40rem; font-weight:bold;">New Year Special</h2></i>
 
      <!-- Slider 1 -->
-     <div class="owl-carousel" id="slider1"  >
-      {% for items in Featured %}
-        <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
-      {% endfor %}
-     </div>
+     <div class="owl-carousel" id="slider1">
+  {% for items in Featured %}
+    <div class="item">
+      <a href="{% url 'product-detail' items.id %}"><img src="{{items.product_image.url}}" alt="" height="200px"></a>
+      <span class="fw-bold">{{items.title}}</span><br>
+      <span class="fs-5">Rs. {{items.discounted_price}}</span><br>
+
+       <form action="/add-to-cart" class="d-inline">
+        <input type="hidden" name="prod_id" value={{items.id}} id="prod_id">
+        <input type="hidden" name="page" value="home">
+        <button type="submit" class="btn shadow px-5 py-2" id="home-add-to-cart-btn" style="background-color:#664235; color:#fff; border-color:#664235;" onclick="alert('{{items.title}} Added to Cart !!')">Add to Cart</button>
+    </form>
+    </div>
+  {% endfor %}
+</div>
+
     </div><br>
     <!-- End 1st Product Slider -->
     <!-- End Payment Info Section -->
@@ -66,8 +77,16 @@
      <!-- Slider 2 -->
      <div class="owl-carousel" id="slider2">
          {% for items in Cake %}
-        <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
-<!--         <a style="box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5);" href="#!" class="btn"><div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div></a>-->
+        <div class="item">
+            <a href="{% url 'product-detail' items.id %}"><img src="{{items.product_image.url}}" alt="" height="200px"></a>
+            <span class="fw-bold">{{items.title}}</span><br>
+            <span class="fs-5">Rs. {{items.discounted_price}}</span><br>
+            <form action="/add-to-cart" class="d-inline">
+        <input type="hidden" name="prod_id" value={{items.id}} id="prod_id">
+        <input type="hidden" name="page" value="home">
+        <button type="submit" class="btn shadow px-5 py-2" id="home-add-to-cart-btn" style="background-color:#664235; color:#fff; border-color:#664235;" onclick="alert('{{items.title}} Added to Cart !!')">Add to Cart</button>
+    </form>
+        </div>
       {% endfor %}
      </div>
     </div><br>
@@ -77,8 +96,16 @@
      <!-- Slider 2 -->
      <div class="owl-carousel" id="slider3">
          {% for items in Cupcake %}
-        <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
-<!--         <a style="box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5);" href="#!" class="btn"><div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div></a>-->
+        <div class="item">
+            <a href="{% url 'product-detail' items.id %}"><img src="{{items.product_image.url}}" alt="" height="200px"></a>
+            <span class="fw-bold">{{items.title}}</span><br>
+            <span class="fs-5">Rs. {{items.discounted_price}}</span><br>
+            <form action="/add-to-cart" class="d-inline">
+        <input type="hidden" name="prod_id" value={{items.id}} id="prod_id">
+        <input type="hidden" name="page" value="home">
+        <button type="submit" class="btn shadow px-5 py-2" id="home-add-to-cart-btn" style="background-color:#664235; color:#fff; border-color:#664235;" onclick="alert('{{items.title}} Added to Cart !!')">Add to Cart</button>
+    </form>
+        </div>
       {% endfor %}
      </div>
     </div><br>
@@ -89,7 +116,16 @@
      <!-- Slider 2 -->
      <div class="owl-carousel" id="slider4">
          {% for items in Bread %}
-        <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
+        <div class="item">
+            <a href="{% url 'product-detail' items.id %}"><img src="{{items.product_image.url}}" alt="" height="200px"></a>
+            <span class="fw-bold">{{items.title}}</span><br>
+            <span class="fs-5">Rs. {{items.discounted_price}}</span><br>
+            <form action="/add-to-cart" class="d-inline">
+        <input type="hidden" name="prod_id" value={{items.id}} id="prod_id">
+        <input type="hidden" name="page" value="home">
+        <button type="submit" class="btn shadow px-5 py-2" id="home-add-to-cart-btn" style="background-color:#664235; color:#fff; border-color:#664235;" onclick="alert('{{items.title}} Added to Cart !!')">Add to Cart</button>
+    </form>
+        </div>
          {% endfor %}
      </div>
     </div><br>
@@ -103,8 +139,16 @@
      <!-- Slider 2 -->
      <div class="owl-carousel" id="slider5">
          {% for items in Pastries %}
-            <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
-<!--         <a style="box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5);" href="#!" class="btn"><div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div></a>-->
+            <div class="item">
+                <a href="{% url 'product-detail' items.id %}"><img src="{{items.product_image.url}}" alt="" height="200px"></a>
+                <span class="fw-bold">{{items.title}}</span><br>
+                <span class="fs-5">Rs. {{items.discounted_price}}</span><br>
+                <form action="/add-to-cart" class="d-inline">
+        <input type="hidden" name="prod_id" value={{items.id}} id="prod_id">
+        <input type="hidden" name="page" value="home">
+        <button type="submit" class="btn shadow px-5 py-2" id="home-add-to-cart-btn" style="background-color:#664235; color:#fff; border-color:#664235;" onclick="alert('{{items.title}} Added to Cart !!')">Add to Cart</button>
+    </form>
+            </div>
       {% endfor %}
 
      </div>
@@ -115,10 +159,18 @@
      <!-- Slider 2 -->
      <div class="owl-carousel" id="slider6">
          {% for items in Doughnut %}
-            <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
+            <div class="item">
+                <a href="{% url 'product-detail' items.id %}"><img src="{{items.product_image.url}}" alt="" height="200px"></a>
+                <span class="fw-bold">{{items.title}}</span><br>
+                <span class="fs-5">Rs. {{items.discounted_price}}</span><br>
+                <form action="/add-to-cart" class="d-inline">
+        <input type="hidden" name="prod_id" value={{items.id}} id="prod_id">
+        <input type="hidden" name="page" value="home">
+        <button type="submit" class="btn shadow px-5 py-2" id="home-add-to-cart-btn" style="background-color:#664235; color:#fff; border-color:#664235;" onclick="alert('{{items.title}} Added to Cart !!')">Add to Cart</button>
+    </form>
+            </div>
          {% endfor %}
      </div>
     </div>
-
 </div>
 {% endblock main-content %}

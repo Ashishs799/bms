@@ -29,8 +29,6 @@ class ProductView(View):
   'Dessert': Dessert, 'Doughnut': Doughnut, 'Pastries': Pastries, 'Featured':Featured, 'Specialoffer1':Specialoffer1, 'Specialoffer2':Specialoffer2,'Specialoffer3':Specialoffer3, 'totalitem':totalitem})
 
 
-# def product_detail(request):
-#  return render(request, 'app/productdetail.html')
 class ProductDetailView(View):
  def get(self, request, pk):
   totalitem = 0
@@ -45,8 +43,25 @@ def add_to_cart(request):
  user = request.user
  product_id = request.GET.get('prod_id')
  product = Product.objects.get(id=product_id)
- Cart(user=user,product=product).save()
- return redirect('/cart')
+ page = request.GET.get('page')
+
+ # Check if the user already has a cart item for this product
+ cart_item = Cart.objects.filter(user=user, product=product).first()
+ if cart_item:
+  # If the item already exists, increase the quantity by 1
+  cart_item.quantity += 1
+  cart_item.save()
+ else:
+  # If the item doesn't exist, create a new cart item with quantity 1
+  Cart(user=user, product=product, quantity=1).save()
+
+ # Redirect to the appropriate page
+ if page == 'home':
+  return redirect('/')
+ else:
+  return redirect('/cart')
+
+
 @login_required
 def show_cart(request):
  totalitem = 0
@@ -154,13 +169,10 @@ def orders(request):
 #  return render(request, 'app/changepassword.html')
 
 def about(request):
- return render(request, 'app/about.html')
-
-# def login(request):
-#  return render(request, 'app/login.html')
-
-# def customerregistration(request):
-#  return render(request, 'app/customerregistration.html')
+ totalitem = 0
+ if request.user.is_authenticated:
+  totalitem = len(Cart.objects.filter(user=request.user))
+ return render(request, 'app/about.html',{'totalitem':totalitem})
 
 class CustomerRegistrationView(View):
  def get(self, request):
@@ -206,10 +218,6 @@ def payment_done(request):
  return redirect(f"/orders/?totalitem={totalitem}")
  # return redirect("orders",{'totalitem':totalitem})
 
-# class ProfileView(View):
-#  def get(self, request):
-#   form = CustomerProfileForm()
-#   return render(request,'app/profile.html',{'form':form})
 
 @method_decorator(login_required, name='dispatch')
 class ProfileView(View):

@@ -40,19 +40,27 @@ $('.plus-cart').click(function(){
 $('.minus-cart').click(function(){
     var id = $(this).attr("pid").toString();
     var eml = this.parentNode.children[2]
-    $.ajax({
-        type: "GET",
-        url:"/minuscart",
-        data: {
-            prod_id:id
-        },
-        success:function (data){
-            eml.innerText = data.quantity
-            document.getElementById("amount").innerText = data.amount
-            document.getElementById("total_amount").innerText = data.total_amount
-        }
-    })
+    var qty = parseInt(eml.innerText)
+    if (qty > 1) {
+        $.ajax({
+            type: "GET",
+            url:"/minuscart",
+            data: {
+                prod_id:id
+            },
+            success:function (data){
+                eml.innerText = data.quantity
+                document.getElementById("amount").innerText = data.amount
+                document.getElementById("total_amount").innerText = data.total_amount
+            }
+        })
+    }
+    else {
+        // popping message
+        alert("Quantity cannot be less than 1.");
+    }
 })
+
 $('.remove-cart').click(function(){
     var id = $(this).attr("pid").toString();
     var eml = this
@@ -69,3 +77,10 @@ $('.remove-cart').click(function(){
         }
     })
 })
+
+//JQuery
+$('#add-to-cart-btn').on('click', function(event) {
+        event.preventDefault(); // Prevents the form from submitting
+        alert('Your item has beem added to cart !!'); // Shows an alert with the message
+        $('form').submit(); // Submits the form
+    });

@@ -17,8 +17,11 @@
   {% else %}
    <form action="/add-to-cart" class="d-inline">
     <input type="hidden" name="prod_id" value={{product.id}} id="prod_id">
-    <button type="submit" class="btn btn-secondary shadow px-5 py-2">Add to Cart</button>
+    <input type="hidden" name="page" value="product_detail">
+    <button type="submit" class="btn btn-secondary shadow px-5 py-2" id="add-to-cart-btn">Add to Cart</button>
    </form>
+
+
    {% endif %}
 <!--   <a style="background-color:#121420; border-color:#121420; color:#ffffff;" href="{% url 'add-to-cart' %}" class="btn  px-5 py-2">Add to Cart</a>-->
    <a style="background-color:#800E13; border-color:#800E13; color:#ffffff;" href="{% url 'checkout' %}" class="btn  px-5 py-2 ms-4">Buy Now</a>
@@ -32,4 +35,5 @@
   </div>
  </div>
 </div>
+
 {% endblock main-content %}
