@@ -1,0 +1,31 @@
+<h2 style="font-family: Georgia, serif;">RECENT ORDERS</h2>
+<table class="recent-orders-table">
+  <thead>
+    <tr >
+      <th>Customer</th>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Ordered Date</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for order in recent_orders %}
+      <tr>
+        <td>{{ order.customer }}</td>
+        <td>{{ order.product }}</td>
+        <td>{{ order.quantity }}</td>
+        <td>{{ order.ordered_date }}</td>
+        <td>{{ order.status }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<style>
+  .recent-orders-table h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+</style>
+

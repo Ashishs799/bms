@@ -1,0 +1,37 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Info{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+ <div class="row">
+<!-- <h3 style="margin-left: 17rem; font-family: 'Georgia', serif;">Welcome <span class="text-capitalize">{{request.user}}</span></h3>-->
+ <h3 style="font-family: 'Georgia', serif; text-align: center;">Your Information</h3>
+<!-- <h3 style="margin-left: 17rem; font-family: 'Georgia', serif;">Your Information</h3>-->
+  <div class="col-sm-2 border-end">
+   <ul class="list-unstyled">
+    <li class="d-grid"><a href="{% url 'profile' %}" class="btn ">Add Details</a></li>
+    <li class="d-grid"><a href="{% url 'address' %}" class="btn {{active}}">Customer Details</a></li>
+   </ul>
+  </div>
+  <div class="col-sm-9 offset-sm-1">
+   <div class="row">
+    {% for ad in add %}
+    <div class="col-sm-6">
+     <div class="card" style="box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">
+      <div class="card-body">
+       <h3>Address {{forloop.counter}}</h3>
+       <p>Name: {{ad.name}}</p>
+       <p>Phone: {{ad.phone}}</p>
+       <p>Locality:{{ad.locality}}</p>
+       <p>City: {{ad.city}}</p>
+       <p>Zip Code: {{ad.zipcode}}</p>
+       <p>State: {{ad.state}}</p>
+      </div>
+     </div>
+    </div>
+    {% endfor %}
+   </div>
+  </div>
+ </div>
+</div>
+{% endblock main-content %}

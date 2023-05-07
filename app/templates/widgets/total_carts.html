@@ -1,0 +1,31 @@
+{% load static %}
+<div class="total-carts-widget">
+  <h2 style="display: flex; align-items: center; justify-content: center;"><img src="{% static 'app/images/icons/totalcart.png' %}" alt="total_cart" style="margin-right: 10px;">TOTAL CARTS</h2>
+  <div class="total-carts-value">{{ total_carts }}</div>
+</div>
+
+<style>
+  .total-carts-widget {
+    background-color: #FDA680;
+    border: 1px solid #FDA680;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+    padding: 12px;
+  }
+
+  .total-carts-widget h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000;
+    font-family: Georgia, serif;
+  }
+
+  .total-carts-value {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+  }
+</style>

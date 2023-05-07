@@ -1,0 +1,106 @@
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+  <h2 style="font-family:Georgia, serif;">SALES OVERVIEW</h2>
+<div class="chart-container">
+  <canvas id="myChart"></canvas>
+</div>
+<style>
+  .chart-container {
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+#myChart {
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+<script>
+  const salesData = [20000, 28000, 20000, 24000, 38000, 32000, 37000, 18000, 40000, 47000, 45000, 42000];
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+const chartContainer = document.querySelector('.chart-container');
+const canvas = document.getElementById('myChart');
+const ctx = canvas.getContext('2d');
+
+const maxSales = Math.max(...salesData);
+const yRatio = chartContainer.clientHeight / maxSales;
+
+const barWidth = 30;
+const barMargin = 10;
+const barColors = ['#FF7F50', '#DC143C', '#FFD700', '#32CD32', '#00BFFF', '#800080', '#FFA500', '#00FFFF', '#008080', '#FF00FF', '#800000', '#00FA9A'];
+
+const data = {
+  labels: months,
+  datasets: [{
+    label: 'Sales',
+    data: salesData,
+    backgroundColor: barColors,
+    borderWidth: 0
+  }]
+};
+
+const options = {
+  responsive: true,
+  maintainAspectRatio: false,
+  scales: {
+    xAxes: [{
+      barPercentage: 0.7,
+      ticks: {
+        fontColor: '#555',
+        fontSize: 14
+      },
+      gridLines: {
+        display: false
+      }
+    }],
+    yAxes: [{
+      ticks: {
+        beginAtZero: true,
+        fontColor: '#555',
+        fontSize: 14,
+        callback: function(value, index, values) {
+          return 'Rs. ' + value.toLocaleString('en-IN');
+        }
+      },
+      gridLines: {
+        display: false,
+      }
+    }]
+  },
+  tooltips: {
+    callbacks: {
+      label: function(tooltipItem, data) {
+        const value = tooltipItem.yLabel.toLocaleString('en-IN');
+        const month = data.labels[tooltipItem.index];
+        return `Rs. ${value} in ${month}`;
+      }
+    }
+  }
+};
+
+const myChart = new Chart(ctx, {
+  type: 'bar',
+  data: data,
+  options: options
+});
+
+const animateChart = () => {
+  const bars = document.querySelectorAll('.chart-container .chartjs-render-monitor .bar');
+  bars.forEach((bar, index) => {
+    bar.style.height = `${salesData[index] * yRatio}px`;
+    bar.addEventListener('mouseover', function() {
+      this.style.opacity = '0.7';
+    });
+    bar.addEventListener('mouseout', function() {
+      this.style.opacity = '1';
+    });
+  });
+};
+
+animateChart();
+
+</script>

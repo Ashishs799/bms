@@ -1,0 +1,141 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}About us{% endblock title %}
+{% block main-content %}
+	<div id="about-us" class="container">
+  <h1 id="about-heading">About Us</h1><hr>
+  <div class="row">
+    <div class="col-12">
+      <img src="{% static 'app/images/team/baking.jpg' %}" alt="Company Logo" style="float:left; margin-right:20px; max-width: 100%;">
+      <p id="about-description">BakeHub is a leading provider of delicious and high-quality bakery items. We believe that the simple pleasure of biting into a freshly baked pastry or loaf of bread can brighten anyone's day. That's why we take great care in sourcing the finest ingredients and using traditional baking methods to create our delicious treats. Our team of skilled bakers and pastry chefs work tirelessly to bring you the very best in bakery items. Whether you're in the mood for a sweet treat or a savory delight, BakeHub has something for everyone. Join us on our mission to spread joy and happiness through the love of baking.</p>
+    </div>
+  </div>
+  <h2 id="team-heading">Our Team</h2>
+</div>
+<hr>
+	<div class="row">
+		<div class="col-3">
+			<div class="team-member" id="pm">
+				<img src="{% static 'app/images/team/pm.jpg' %}" alt="Team Member">
+				<h3>Pabitra Dharel</h3>
+				<p>Project Manager</p>
+			</div>
+		</div>
+		<div class="col-3">
+			<div class="team-member">
+				<img src="{% static 'app/images/team/Ba.jpg' %}" alt="Team Member">
+				<h3>Raunak Shrestha</h3>
+				<p>Business Analyst</p>
+			</div>
+		</div>
+		<div class="col-3">
+			<div class="team-member">
+				<img src="{% static 'app/images/team/head.jpg' %}" alt="Team Member">
+				<h3>Ashish Sunar</h3>
+				<p>Head Developer</p>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-3">
+			<div class="team-member">
+				<img src="{% static 'app/images/team/developer1.jpg' %}" alt="Team Member">
+				<h3>Sajan Dangol</h3>
+				<p>Developer</p>
+			</div>
+		</div>
+		<div class="col-3">
+			<div class="team-member">
+				<img src="{% static 'app/images/team/developer2.jpg' %}" alt="Team Member">
+				<h3>Sushma Shrestha</h3>
+				<p>Developer</p>
+			</div>
+		</div>
+		<div class="col-3">
+			<div class="team-member">
+				<img src="{% static 'app/images/team/developer3.jpg' %}" alt="Team Member">
+				<h3>Denish Tamang</h3>
+				<p>Developer</p>
+			</div>
+		</div>
+	</div>
+</div>
+<style>
+
+	#about-us.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 50px;
+	}
+
+	#about-us h1 {
+		font-size: 33px;
+		text-align: center;
+		position: absolute;
+		top: 63px;
+		color: #333;
+		margin-left: 345px
+	}
+
+	#about-us h2 {
+		font-size: 28px;
+		color: #333;
+		position: absolute;
+		bottom: 50px;
+	}
+
+	#about-us p {
+		font-size: 18px;
+		line-height: 1.5;
+		margin-bottom: 30px;
+		color: #666;
+		margin-top: 20px;
+	}
+
+	.row {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -15px;
+		justify-content: center;
+		margin-top:30px;
+	}
+
+	.col-4 {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 0 15px;
+
+}
+
+
+	.team-member {
+		background-color: #fff;
+		padding: 20px;
+		text-align: center;
+		border-radius: 5px;
+		box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+		margin-bottom: 30px;
+		margin-right: 20px;
+		width: 300px;
+	}
+
+	.team-member img {
+		max-width: 100%;
+		border-radius: 0;
+		margin-bottom: 20px;
+	}
+
+	.team-member h3 {
+		font-size: 22px;
+		margin-bottom: 10px;
+		color: #333;
+	}
+
+	.team-member p {
+		font-size: 16px;
+		line-height: 1.5;
+		color: #666;
+	}
+</style>
+
+{% endblock main-content %}

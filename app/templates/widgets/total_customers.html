@@ -1,0 +1,31 @@
+{% load static %}
+<div class="total-customers-widget">
+  <h2 style="display: flex; align-items: center; justify-content: center;"><img src="{% static 'app/images/icons/totalcust.png' %}" alt="total_cust" style="margin-right: 10px;">TOTAL CUSTOMER</h2>
+  <div class="total-customers-value">{{ total_customers }}</div>
+</div>
+
+<style>
+  .total-customers-widget {
+    background-color: #FF7B8A;
+    border: 1px solid #FF7B8A;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+    padding: 12px;
+  }
+
+  .total-customers-widget h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000;
+    font-family: Georgia, serif;
+  }
+
+  .total-customers-value {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+  }
+</style>
