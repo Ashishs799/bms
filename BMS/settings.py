@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Kathmandu'
-TIME_ZONE = 'UTC'
+
 
 USE_I18N = True
 
@@ -135,4 +135,4 @@ EMAIL_HOST_PASSWORD = "chbwasozskglddsa"
 
 JET_INDEX_DASHBOARD = 'app.dashboard.CustomDashboard'
 JET_SIDE_MENU_COMPACT = True
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+

@@ -78,16 +78,16 @@ class BarChartWidget(DashboardModule):
 
     def render(self, request=None):
         return render_to_string('widgets/chart.html')
-#
-# class RecentOrderWidget(DashboardModule):
-#     title = 'Recent Orders'
-#
-#     def render(self, request=None):
-#         recent_orders = OrderPlaced.objects.all().order_by('-ordered_date')[:10]# Retrieve the 5 most recent orders from the database
-#         context = {'recent_orders': recent_orders} # Create a context dictionary with the recent orders data
-#         return render_to_string('widgets/recent_orders.html', context)
-#
-# class ActionsWidget(DashboardModule):
-#     title = 'Recent Actions'
-#     def render(self, request=None):
-#         return render_to_string('widgets/recent_action.html')
+
+class RecentOrderWidget(DashboardModule):
+    title = 'Recent Orders'
+
+    def render(self, request=None):
+        recent_orders = OrderPlaced.objects.all().order_by('-ordered_date')[:10]# Retrieve the 5 most recent orders from the database
+        context = {'recent_orders': recent_orders} # Create a context dictionary with the recent orders data
+        return render_to_string('widgets/recent_orders.html', context)
+
+class ActionsWidget(DashboardModule):
+    title = 'Recent Actions'
+    def render(self, request=None):
+        return render_to_string('widgets/recent_action.html')
