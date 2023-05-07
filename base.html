@@ -21,29 +21,22 @@
     <!-- landing page CSS-->
     <link rel="stylesheet" href="{% static 'app/css/landing.css' %}">
 
-<!--    <link rel="stylesheet" href="{% static 'app/css/about.css' %}">-->
-
     <title>BakeHub | {% block title %} {% endblock title %} </title>
   </head>
-
-<<<<<<< HEAD
-  <body style="background-color: #ffd2da">
-=======
-  <body style="background-color: #F7C3CD">
->>>>>>> 999756c13aa4e6bdeadd95bea7604dbf644edab2
-    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #934713; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);height:75px">
+  <body style="background-color: #fff">
+    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #D8A47F; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);height:75px">
      <div class="container">
-       <a class="navbar-brand" href="/"><img src="{% static 'app/images/icons/bakelogo.png' %}" style="width:73px; height:73px;" alt="BakeHub"/></a>
+       <a class="navbar-brand" href="/">BakeHub</a>
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
        </button>
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-         <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left:48.5rem;">
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
            <li class="nav-item">
-             <a class="nav-link active" aria-current="page" style="color:#000;" href="/">Home</a>
+             <a class="nav-link active" aria-current="page" href="/">Home</a>
            </li>
            <li class="nav-item dropdown">
-             <a style="color:#000 !important;" class="nav-link dropdown-toggle text-white" href="#" id="bakeryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             <a class="nav-link dropdown-toggle text-white" href="#" id="bakeryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                Menu
              </a>
              <ul class="dropdown-menu" aria-labelledby="menuDropdown">
@@ -55,49 +48,42 @@
              </ul>
            </li>
            <li class="nav-item dropdown">
-             <a style="color:#000 !important;" class="nav-link dropdown-toggle text-white" href="#" id="fashionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                About
-              </a>
-
+             <a class="nav-link dropdown-toggle text-white" href="#" id="fashionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               About
+             </a>
              <ul class="dropdown-menu" aria-labelledby="Aboutdropdown">
-<<<<<<< HEAD
-               <li><a class="dropdown-item" href="{% url 'aboutus' %}">About Us</a></li>
-               <li><a class="dropdown-item" href="{% url 'contact' %}">Contact us</a></li>
-=======
-               <li><a class="dropdown-item" href="#">About Us</a></li>   <!--  {% url 'aboutus' %}-->
+               <li><a class="dropdown-item" href="#">About Us</a></li>
                <li><a class="dropdown-item" href="#">Contact us</a></li>
->>>>>>> 5b4533d56b7d797cdd4055bf204d57b3b5e0c95f
              </ul>
            </li>
          </ul>
+         <form class="d-flex">
+
+           <button class="btn btn-warning" type="submit">{{ request.user.username.0|capfirst }}</button>
+         </form>
          <div>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           {% if request.user.is_authenticated %}
-
-            <li class="nav-item mx-2">
-             <a  href="{% url 'showcart' %}" class="nav-link text-white="><span class="badge" style="color:#000; background-color:#dc354500;">{{totalitem}}</span><img src="{% static 'app/images/icons/shopcart.png' %}" alt="Cart"/></a>
-
-            <li class="nav-item dropdown mx-2">
-              <a style="color:#000;" class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           <li class="nav-item dropdown mx-2">
+              <a class="nav-link dropdown-toggle text-white" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   {{request.user.username|capfirst}}
               </a>
               <ul class="dropdown-menu" aria-labelledby="profileDropdown">
                 <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
-                <li><a class="dropdown-item" href="{% url 'orders' %}">Orders</a></li>
+                <li><a class="dropdown-item" href="{% url 'orders' %">Orders</a></li>
                 <li><a class="dropdown-item" href="{% url 'passwordchange' %}">Change Password</a></li>
                 <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
               </ul>
             </li>
-            <form class="d-flex">
-              <button style="width:34px; height:31px; line-height:18px; background-color:#b09258;" class="btn" type="submit">{{ request.user.username.0|capfirst }}</button>
-           </form>
+            <li class="nav-item mx-2">
+             <a href="{% url 'add-to-cart' %}" class="nav-link text-white"><span class="badge bg-danger">0</span> Cart </a>
            {% else %}
             </li>
             <li class="nav-item mx-2">
-             <a href="{% url 'login' %}" class="nav-link text-white"><button type="button"  style="broder-radius:15px" class="btn btn-outline-dark btn-sm">Login</button></a>
+             <a href="{% url 'login' %}" class="nav-link text-white">Login</a>
             </li>
             <li class="nav-item mx-2">
-             <a href="{% url 'customerregistration' %}" class="nav-link text-white"><button type="button" style="broder-radius:15px" class="btn btn-outline-dark btn-sm">Sign Up</button></a>
+             <a href="{% url 'customerregistration' %}" class="nav-link text-white">Registration</a>
             </li>
             {% endif %}
           </ul>
@@ -175,7 +161,7 @@
                 style="width: 60px; background-color: #7c4dff; height: 2px"
                 />
             <p>
-              <a href="/" class="text-white">Home</a>
+              <a href="#!" class="text-white">Home</a>
             </p>
             <p>
               <a href="#!" class="text-white">About</a>
@@ -198,7 +184,7 @@
                 style="width: 60px; background-color: #7c4dff; height: 2px"
                 />
             <p><i class="fas fa-home mr-3"></i> Naxal-06, Kathmandu</p>
-            <p><i class="fas fa-envelope mr-3"></i> bakehub@gmail.com</p>
+            <p><i class="fas fa-envelope mr-3"></i> bakehub@example.com</p>
             <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
             <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
           </div>
@@ -218,13 +204,5 @@
     <script src="{% static 'app/js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'app/js/all.min.js' %}"></script>
     <script src="{% static 'app/js/myscript.js' %}"></script>
-    <script>
-      var menuButton = document.querySelector('.menu-button');
-      var contentDiv = document.querySelector('.mx-3');
-
-      menuButton.addEventListener('click', function() {
-        contentDiv.scrollIntoView({ behavior: 'smooth' });
-      });
-    </script>
   </body>
 </html>
