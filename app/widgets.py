@@ -17,18 +17,18 @@ class TotalOrdersWidget(DashboardModule):
         }
         return render_to_string('widgets/total_orders.html', context)
 
-# class TotalUserWidget(DashboardModule):
-#     title = 'Total Users'
-#
-#     def render(self, request=None):
-#         User = get_user_model()
-#         total_users = User.objects.all().count()
-#         context = {
-#             'total_users': total_users,
-#         }
-#         return render_to_string('widgets/total_users.html', context)
-#
-#
+class TotalUserWidget(DashboardModule):
+    title = 'Total Users'
+
+    def render(self, request=None):
+        User = get_user_model()
+        total_users = User.objects.all().count()
+        context = {
+            'total_users': total_users,
+        }
+        return render_to_string('widgets/total_users.html', context)
+
+
 class TotalProductWidget(DashboardModule):
     title = 'Total Products'
 
