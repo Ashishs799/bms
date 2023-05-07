@@ -18,11 +18,9 @@ class Customer(models.Model):
     city = models.CharField(max_length=50)
     zipcode = models.IntegerField()
     state = models.CharField(choices=STATE_CHOICES, max_length=50)
-<<<<<<< HEAD
     def __str__(self):
         return self.name
-=======
->>>>>>> adabc05409fff91934323e19406acf814d1e1901
+
 
 def __str__(self):
     return str(self.id)
@@ -49,14 +47,11 @@ class Product(models.Model):
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=15)
     product_image = models.ImageField(upload_to='productsimg')
 
-<<<<<<< HEAD
 
     def __str__(self):
         return str(self.title)
-=======
 def __str__(self):
     return str(self.id)
->>>>>>> adabc05409fff91934323e19406acf814d1e1901
 
 class Cart(models.Model):
     user = models.ForeignKey(User, on_delete= models.CASCADE)
@@ -85,10 +80,6 @@ class OrderPlaced(models.Model):
     quantity = models.PositiveIntegerField(default=1)
     ordered_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=50,choices=STATUS_CHOICES, default='Pending')
-<<<<<<< HEAD
-=======
-
->>>>>>> adabc05409fff91934323e19406acf814d1e1901
     @property
     def total_cost(self):
         return self.quantity * self.product.discounted_price
