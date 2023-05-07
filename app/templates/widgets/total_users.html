@@ -1,0 +1,32 @@
+{% load static %}
+<div class="total-users-widget">
+  <h2 style="display: flex; align-items: center; justify-content: center;"><img src="{% static 'app/images/icons/totaluser.png' %}" alt="total_user" style="margin-right: 10px;">TOTAL USERS</h2>
+  <div class="total-users-value">{{ total_users }}</div>
+</div>
+
+<style>
+  .total-users-widget {
+    background-color: #6DD4B1;
+    border: 1px solid #6DD4B1;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+    padding: 12px;
+  }
+
+  .total-users-widget h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000;
+    font-family: Georgia, serif;
+  }
+
+  .total-users-value {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+</style>
