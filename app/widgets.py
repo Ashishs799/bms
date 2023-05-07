@@ -58,26 +58,26 @@ class TotalCartWidget(DashboardModule):
             'total_carts': total_carts,
         }
         return render_to_string('widgets/total_carts.html', context)
-#
-# class TotalSalesWidget(DashboardModule):
-#     title = 'Total Sales'
-#
-#     def render(self, request=None):
-#         orders = OrderPlaced.objects.all()
-#         total_sales = 0
-#         for order in orders:
-#             total_sales += int((order.product.discounted_price * order.quantity)) or 0
-#         context = {
-#             'total_sales': total_sales,
-#         }
-#         return render_to_string('widgets/total_sales.html', context)
-#
-#
-# class BarChartWidget(DashboardModule):
-#     title = 'Sales Overview'
-#
-#     def render(self, request=None):
-#         return render_to_string('widgets/chart.html')
+
+class TotalSalesWidget(DashboardModule):
+    title = 'Total Sales'
+
+    def render(self, request=None):
+        orders = OrderPlaced.objects.all()
+        total_sales = 0
+        for order in orders:
+            total_sales += int((order.product.discounted_price * order.quantity)) or 0
+        context = {
+            'total_sales': total_sales,
+        }
+        return render_to_string('widgets/total_sales.html', context)
+
+
+class BarChartWidget(DashboardModule):
+    title = 'Sales Overview'
+
+    def render(self, request=None):
+        return render_to_string('widgets/chart.html')
 #
 # class RecentOrderWidget(DashboardModule):
 #     title = 'Recent Orders'
