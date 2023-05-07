@@ -8,8 +8,8 @@ from django.utils.translation import gettext_lazy as _
 from jet.dashboard import modules
 from jet.dashboard.dashboard import Dashboard
 from jet.dashboard.modules import ModelList, AppList, RecentActions
-from app.widgets import TotalOrdersWidget, TotalProductWidget, TotalUserWidget, TotalCustomerWidget
-#   , TotalCartWidget, \
+from app.widgets import TotalOrdersWidget, TotalProductWidget, TotalUserWidget, TotalCustomerWidget, TotalCartWidget
+#   , \
     # TotalSalesWidget, BarChartWidget, RecentOrderWidget, ActionsWidget
 
 
@@ -27,7 +27,7 @@ class CustomDashboard(Dashboard):
         self.available_children.append(TotalUserWidget)
         self.available_children.append(TotalProductWidget)
         self.available_children.append(TotalCustomerWidget)
-        # self.available_children.append(TotalCartWidget)
+        self.available_children.append(TotalCartWidget)
         # self.available_children.append(TotalSalesWidget)
         # self.available_children.append(BarChartWidget)
         # self.available_children.append(RecentOrderWidget)

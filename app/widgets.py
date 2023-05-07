@@ -1,8 +1,7 @@
 
 from jet.dashboard.modules import DashboardModule
 from django.db.models import Sum
-from app.models import OrderPlaced,Product, Customer
-    # , Cart
+from app.models import OrderPlaced,Product, Customer, Cart
 from django.contrib.auth import get_user_model
 from django.template.loader import render_to_string
 
@@ -50,15 +49,15 @@ class TotalCustomerWidget(DashboardModule):
         return render_to_string('widgets/total_customers.html', context)
 #
 #
-# class TotalCartWidget(DashboardModule):
-#     title = 'Total Carts'
-#
-#     def render(self, request=None):
-#         total_carts = Cart.objects.all().count()
-#         context = {
-#             'total_carts': total_carts,
-#         }
-#         return render_to_string('widgets/total_carts.html', context)
+class TotalCartWidget(DashboardModule):
+    title = 'Total Carts'
+
+    def render(self, request=None):
+        total_carts = Cart.objects.all().count()
+        context = {
+            'total_carts': total_carts,
+        }
+        return render_to_string('widgets/total_carts.html', context)
 #
 # class TotalSalesWidget(DashboardModule):
 #     title = 'Total Sales'
