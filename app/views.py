@@ -29,6 +29,11 @@ class ProductView(View):
   'Dessert': Dessert, 'Doughnut': Doughnut, 'Pastries': Pastries, 'Featured':Featured, 'Specialoffer1':Specialoffer1, 'Specialoffer2':Specialoffer2,'Specialoffer3':Specialoffer3, 'totalitem':totalitem})
 
 
+<<<<<<< HEAD
+=======
+# def product_detail(request):
+#  return render(request, 'app/productdetail.html')
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
 class ProductDetailView(View):
  def get(self, request, pk):
   totalitem = 0
@@ -43,6 +48,7 @@ def add_to_cart(request):
  user = request.user
  product_id = request.GET.get('prod_id')
  product = Product.objects.get(id=product_id)
+<<<<<<< HEAD
  page = request.GET.get('page')
 
  # Check if the user already has a cart item for this product
@@ -62,6 +68,10 @@ def add_to_cart(request):
   return redirect('/cart')
 
 
+=======
+ Cart(user=user,product=product).save()
+ return redirect('/cart')
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
 @login_required
 def show_cart(request):
  totalitem = 0
@@ -169,6 +179,7 @@ def orders(request):
 #  return render(request, 'app/changepassword.html')
 
 def about(request):
+<<<<<<< HEAD
  totalitem = 0
  if request.user.is_authenticated:
   totalitem = len(Cart.objects.filter(user=request.user))
@@ -178,6 +189,16 @@ def contact(request):
  if request.user.is_authenticated:
   totalitem = len(Cart.objects.filter(user=request.user))
  return render(request, 'app/contact.html',{'totalitem':totalitem})
+=======
+ return render(request, 'app/about.html')
+
+# def login(request):
+#  return render(request, 'app/login.html')
+
+# def customerregistration(request):
+#  return render(request, 'app/customerregistration.html')
+
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
 class CustomerRegistrationView(View):
  def get(self, request):
   form = CustomerRegistrationForm()
@@ -219,9 +240,18 @@ def payment_done(request):
   for c in cart:
    OrderPlaced(user=user, customer=customer, product=c.product, quantity=c.quantity).save()
    c.delete()
+<<<<<<< HEAD
  return redirect(f"/orders/?totalitem={totalitem}")
  # return redirect("orders",{'totalitem':totalitem})
 
+=======
+ return redirect("orders",{'totalitem':totalitem})
+
+# class ProfileView(View):
+#  def get(self, request):
+#   form = CustomerProfileForm()
+#   return render(request,'app/profile.html',{'form':form})
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
 
 @method_decorator(login_required, name='dispatch')
 class ProfileView(View):
@@ -247,3 +277,12 @@ class ProfileView(View):
    reg.save()
    messages.success(request,'Congratulations!! Your Profile is updated successfully!!')
   return render(request,'app/profile.html',{'form':form, 'active':'btn-outline-info'})
+<<<<<<< HEAD
+=======
+
+def contact(request):
+  return render(request, 'app/contact.html')
+
+def about(request):
+  return render(request, 'app/about.html')
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901

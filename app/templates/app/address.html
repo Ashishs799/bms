@@ -1,5 +1,6 @@
 {% extends 'app/base.html' %}
 {% load static %}
+<<<<<<< HEAD
 {% block title %}Info{% endblock title %}
 {% block main-content %}
 <div class="container my-5">
@@ -11,13 +12,28 @@
    <ul class="list-unstyled">
     <li class="d-grid"><a href="{% url 'profile' %}" class="btn ">Add Details</a></li>
     <li class="d-grid"><a href="{% url 'address' %}" class="btn {{active}}">Customer Details</a></li>
+=======
+{% block title %}Buy Now{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+ <div class="row">
+ <h3 style="margin-left: 17rem; font-family: 'Georgia', serif;">Welcome <span class="text-capitalize">{{request.user}}</span></h3>
+  <div class="col-sm-2 border-end">
+   <ul class="list-unstyled">
+    <li class="d-grid"><a href="{% url 'profile' %}" class="btn ">Details</a></li>
+    <li class="d-grid"><a href="{% url 'address' %}" class="btn {{active}}">Address</a></li>
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
    </ul>
   </div>
   <div class="col-sm-9 offset-sm-1">
    <div class="row">
     {% for ad in add %}
     <div class="col-sm-6">
+<<<<<<< HEAD
      <div class="card" style="box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">
+=======
+     <div class="card">
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
       <div class="card-body">
        <h3>Address {{forloop.counter}}</h3>
        <p>Name: {{ad.name}}</p>

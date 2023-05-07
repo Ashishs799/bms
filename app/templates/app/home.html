@@ -28,6 +28,7 @@
     <span class="visually-hidden">Next</span>
   </a>
 </div>
+<<<<<<< HEAD
 <div id= "container-landing" class="container my-3" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
     <div class="left-container">
       <button style="outline: none; background-color:#894e3f;border-color:#894e3f; color:#fff; width:8rem;" class="menu-button">Menu</button>
@@ -36,6 +37,16 @@
           To make sure that every food item <br>we give is a treat to the palette and the eyes, we hold ourselves to high standards of quality.<br>
           We work hard to maintain consistency so that every customer receives the same consistently<br> gratifying experience while enjoying the wide range of goods we have to offer.
           Our offerings <br>fluctuate to highlight the best seasonal ingredients and the extraordinary creativity of our chefs.
+=======
+<div class="container my-3" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+    <div class="left-container">
+      <button style="outline: none; background-color:#894e3f;border-color:#894e3f; color:#fff; width:8rem;" class="menu-button">Menu</button>
+      <h1>Freshly Baked With Love...</h1>
+      <h6><i>The Bakery hopes to be more than just City's best bakery.
+          To make sure that every food item we give is a treat to the palette and the eyes, we hold ourselves to high standards of quality.
+          We work hard to maintain consistency so that every customer receives the same consistently gratifying experience while enjoying the wide range of goods we have to offer.
+          Our offerings fluctuate to highlight the best seasonal ingredients and the extraordinary creativity of our chefs.
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
       </i></h6>
 
     </div>
@@ -50,6 +61,7 @@
 <!-- 1st Product Slider -->
 <div class="container-fluid" style="background-color: #ece6d54d; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
     <div class="m-3" >
+<<<<<<< HEAD
      <i><h2 style="color: #8a4832; margin-left:40rem; font-weight:bold;">New Year Special</h2></i>
 
      <!-- Slider 1 -->
@@ -69,6 +81,16 @@
   {% endfor %}
 </div>
 
+=======
+     <i><h2 style="color: #8a4832; margin-left:40rem; font-weight:bold;">Todays Items</h2></i>
+
+     <!-- Slider 1 -->
+     <div class="owl-carousel" id="slider1"  >
+      {% for items in Featured %}
+        <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
+      {% endfor %}
+     </div>
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
     </div><br>
     <!-- End 1st Product Slider -->
     <!-- End Payment Info Section -->
@@ -77,6 +99,7 @@
      <!-- Slider 2 -->
      <div class="owl-carousel" id="slider2">
          {% for items in Cake %}
+<<<<<<< HEAD
         <div class="item">
             <a href="{% url 'product-detail' items.id %}"><img src="{{items.product_image.url}}" alt="" height="200px"></a>
             <span class="fw-bold">{{items.title}}</span><br>
@@ -87,6 +110,10 @@
         <button type="submit" class="btn shadow px-5 py-2" id="home-add-to-cart-btn" style="background-color:#664235; color:#fff; border-color:#664235;" onclick="alert('{{items.title}} Added to Cart !!')">Add to Cart</button>
     </form>
         </div>
+=======
+        <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
+<!--         <a style="box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5);" href="#!" class="btn"><div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div></a>-->
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
       {% endfor %}
      </div>
     </div><br>
@@ -96,6 +123,7 @@
      <!-- Slider 2 -->
      <div class="owl-carousel" id="slider3">
          {% for items in Cupcake %}
+<<<<<<< HEAD
         <div class="item">
             <a href="{% url 'product-detail' items.id %}"><img src="{{items.product_image.url}}" alt="" height="200px"></a>
             <span class="fw-bold">{{items.title}}</span><br>
@@ -106,6 +134,10 @@
         <button type="submit" class="btn shadow px-5 py-2" id="home-add-to-cart-btn" style="background-color:#664235; color:#fff; border-color:#664235;" onclick="alert('{{items.title}} Added to Cart !!')">Add to Cart</button>
     </form>
         </div>
+=======
+        <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
+<!--         <a style="box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5);" href="#!" class="btn"><div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div></a>-->
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
       {% endfor %}
      </div>
     </div><br>
@@ -116,6 +148,7 @@
      <!-- Slider 2 -->
      <div class="owl-carousel" id="slider4">
          {% for items in Bread %}
+<<<<<<< HEAD
         <div class="item">
             <a href="{% url 'product-detail' items.id %}"><img src="{{items.product_image.url}}" alt="" height="200px"></a>
             <span class="fw-bold">{{items.title}}</span><br>
@@ -127,11 +160,19 @@
     </form>
         </div>
          {% endfor %}
+=======
+        <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
+         {% endfor %}-->
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
      </div>
     </div><br>
 
 
+<<<<<<< HEAD
     <!-- End 2nd Product Slider -->
+=======
+    <-- End 2nd Product Slider -->
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
 
 
     <div class="mx-3">
@@ -139,6 +180,7 @@
      <!-- Slider 2 -->
      <div class="owl-carousel" id="slider5">
          {% for items in Pastries %}
+<<<<<<< HEAD
             <div class="item">
                 <a href="{% url 'product-detail' items.id %}"><img src="{{items.product_image.url}}" alt="" height="200px"></a>
                 <span class="fw-bold">{{items.title}}</span><br>
@@ -149,6 +191,10 @@
         <button type="submit" class="btn shadow px-5 py-2" id="home-add-to-cart-btn" style="background-color:#664235; color:#fff; border-color:#664235;" onclick="alert('{{items.title}} Added to Cart !!')">Add to Cart</button>
     </form>
             </div>
+=======
+            <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
+<!--         <a style="box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5);" href="#!" class="btn"><div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div></a>-->
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
       {% endfor %}
 
      </div>
@@ -159,6 +205,7 @@
      <!-- Slider 2 -->
      <div class="owl-carousel" id="slider6">
          {% for items in Doughnut %}
+<<<<<<< HEAD
             <div class="item">
                 <a href="{% url 'product-detail' items.id %}"><img src="{{items.product_image.url}}" alt="" height="200px"></a>
                 <span class="fw-bold">{{items.title}}</span><br>
@@ -174,3 +221,12 @@
     </div>
 </div>
 {% endblock main-content %}
+=======
+            <div class="item"><img src="{{items.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{items.title}}</span><br><span class="fs-5">Rs. {{items.discounted_price}}</span><br><a  style="background-color:#664235; color:#fff; border-color:#664235;" href="{% url 'product-detail' items.id %}" class="btn">Order Now</a></div>
+         {% endfor %}
+     </div>
+    </div>
+
+</div>
+{% endblock main-content %}
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901

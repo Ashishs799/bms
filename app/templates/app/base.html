@@ -26,12 +26,23 @@
     <title>BakeHub | {% block title %} {% endblock title %} </title>
   </head>
 
+<<<<<<< HEAD
 
   <body style="background-color: #fff">
 
     <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #934713; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);height:75px">
      <div class="container">
        <a class="navbar-brand" href="/"><img src="{% static 'app/images/icons/bakelogo.png' %}" style="width:75px; height:75px;" alt="BakeHub"/></a>
+=======
+<<<<<<< HEAD
+  <body style="background-color: #ffd2da">
+=======
+  <body style="background-color: #F7C3CD">
+>>>>>>> 999756c13aa4e6bdeadd95bea7604dbf644edab2
+    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #934713; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);height:75px">
+     <div class="container">
+       <a class="navbar-brand" href="/"><img src="{% static 'app/images/icons/bakelogo.png' %}" style="width:73px; height:73px;" alt="BakeHub"/></a>
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
        </button>
@@ -44,12 +55,21 @@
              <a style="color:#000 !important;" class="nav-link dropdown-toggle text-white" href="#" id="bakeryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                Menu
              </a>
+<<<<<<< HEAD
              <ul id="otherDropdownMenu" class="dropdown-menu" aria-labelledby="menuDropdown">
                <li><a class="dropdown-item" href="#" data-target="#slider2">Cake</a></li>
                 <li><a class="dropdown-item" href="#" data-target="#slider3">Cupcake</a></li>
                 <li><a class="dropdown-item" href="#" data-target="#slider4">Bread</a></li>
                 <li><a class="dropdown-item" href="#" data-target="#slider5">Pastries</a></li>
                 <li><a class="dropdown-item" href="#" data-target="#slider6">Doughnut</a></li>
+=======
+             <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+               <li><a class="dropdown-item" href="#">Cake</a></li>
+               <li><a class="dropdown-item" href="#">Cupcake</a></li>
+                <li><a class="dropdown-item" href="#">Pastries</a></li>
+                 <li><a class="dropdown-item" href="#">Cookies</a></li>
+                 <li><a class="dropdown-item" href="#">Dessert</a></li>
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
              </ul>
            </li>
            <li class="nav-item dropdown">
@@ -57,9 +77,20 @@
                 About
               </a>
 
+<<<<<<< HEAD
              <ul id="AboutDropdownMenu" class="dropdown-menu" aria-labelledby="Aboutdropdown">
                <li><a class="dropdown-item" href="{% url 'aboutus' %}">About Us</a></li>
                <li><a class="dropdown-item" href="{% url 'contact' %}">Contact us</a></li>
+=======
+             <ul class="dropdown-menu" aria-labelledby="Aboutdropdown">
+<<<<<<< HEAD
+               <li><a class="dropdown-item" href="{% url 'aboutus' %}">About Us</a></li>
+               <li><a class="dropdown-item" href="{% url 'contact' %}">Contact us</a></li>
+=======
+               <li><a class="dropdown-item" href="#">About Us</a></li>   <!--  {% url 'aboutus' %}-->
+               <li><a class="dropdown-item" href="#">Contact us</a></li>
+>>>>>>> 5b4533d56b7d797cdd4055bf204d57b3b5e0c95f
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
              </ul>
            </li>
          </ul>
@@ -74,15 +105,24 @@
               <a style="color:#000;" class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   {{request.user.username|capfirst}}
               </a>
+<<<<<<< HEAD
               <ul id="ProfileDropdownMenu" class="dropdown-menu" aria-labelledby="profileDropdown">
+=======
+              <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
                 <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
                 <li><a class="dropdown-item" href="{% url 'orders' %}">Orders</a></li>
                 <li><a class="dropdown-item" href="{% url 'passwordchange' %}">Change Password</a></li>
                 <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
               </ul>
             </li>
+<<<<<<< HEAD
             <form class="d-flex justify-content-center">
               <button style="width:34px; height:31px; line-height:18px; background-color:#b09258; margin left:20px;" class="btn" type="submit">{{ request.user.username.0|capfirst }}</button>
+=======
+            <form class="d-flex">
+              <button style="width:34px; height:31px; line-height:18px; background-color:#b09258;" class="btn" type="submit">{{ request.user.username.0|capfirst }}</button>
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
            </form>
            {% else %}
             </li>
@@ -139,6 +179,7 @@
                 style="width: 60px; background-color: #7c4dff; height: 2px"
                 />
             <p>
+<<<<<<< HEAD
               <a  class="text-white">Cakes</a>
             </p>
             <p>
@@ -152,6 +193,24 @@
             </p>
             <p>
               <a class="text-white">Doughnuts</a>
+=======
+              <a href="#!" class="text-white">Cakes</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Cupcakes</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Breads</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Dessert</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Doughnuts</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Pastries</a>
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
             </p>
           </div>
           <!-- Grid column -->
@@ -168,7 +227,11 @@
               <a href="/" class="text-white">Home</a>
             </p>
             <p>
+<<<<<<< HEAD
               <a href="{% url 'aboutus' %}" class="text-white">About</a>
+=======
+              <a href="#!" class="text-white">About</a>
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
             </p>
             <p>
               <a href="{% url 'orders' %}" class="text-white">Orders</a>
@@ -216,6 +279,7 @@
         contentDiv.scrollIntoView({ behavior: 'smooth' });
       });
     </script>
+<<<<<<< HEAD
   <script>
     // Get the dropdown menu and its items
 const otherDropdownMenu = document.querySelector('#otherDropdownMenu');
@@ -236,4 +300,7 @@ otherDropdownItems.forEach(item => {
   </script>
   </body>
 
+=======
+  </body>
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
 </html>

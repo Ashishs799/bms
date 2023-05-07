@@ -5,8 +5,16 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from .forms import LoginForm, ChangePasswordForm, MyPasswordResetForm, MySetPasswordForm
 
+<<<<<<< HEAD
 #setting paths
 urlpatterns = [
+=======
+
+
+#setting paths
+urlpatterns = [
+
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
     path('', views.ProductView.as_view(), name = 'home'),
     path('product-detail/<int:pk>', views.ProductDetailView.as_view(), name='product-detail'),
     path('add-to-cart/', views.add_to_cart, name='add-to-cart'),
@@ -14,14 +22,25 @@ urlpatterns = [
     path('pluscart/', views.plus_cart),
     path('minuscart/', views.minus_cart),
     path('removecart/', views.remove_cart),
+<<<<<<< HEAD
     path('buy/', views.buy_now, name='buy-now'),
     path('profile/', views.ProfileView.as_view(), name='profile'),
     path('aboutus/',views.about, name='aboutus'),
     path('contact/',views.contact, name='contact'),
+=======
+    path('contact/', views.contact, name='contact'),
+    path('buy/', views.buy_now, name='buy-now'),
+    path('profile/', views.ProfileView.as_view(), name='profile'),
+    path('aboutus/',views.about, name='aboutus'),
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
     path('address/', views.address, name='address'),
     path('orders/', views.orders, name='orders'),
     path('checkout/', views.checkout, name='checkout'),
     path('paymentdone/', views.payment_done, name='paymentdone'),
+<<<<<<< HEAD
+=======
+    path('aboutus/',views.about, name='aboutus'),
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
     path('passwordchange/', auth_views.PasswordChangeView.as_view(template_name='app/passwordchange.html', form_class=ChangePasswordForm, success_url='/passwordchangedone/'), name='passwordchange'),
     path('passwordchangedone/',auth_views.PasswordChangeDoneView.as_view(template_name='app/passwordchangedone.html'),name = 'passwordchangedone'),
     path('password-reset/', auth_views.PasswordResetView.as_view(template_name='app/password_reset.html', form_class=MyPasswordResetForm), name='password-reset'),

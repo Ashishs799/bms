@@ -12,9 +12,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -34,8 +37,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
     'jet.dashboard',
     'jet',
+=======
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -112,7 +118,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+<<<<<<< HEAD
 TIME_ZONE = 'Asia/Kathmandu'
+=======
+TIME_ZONE = 'UTC'
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
 
 USE_I18N = True
 
@@ -128,6 +138,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
 LOGIN_REDIRECT_URL = '/profile/'
+<<<<<<< HEAD
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_USE_TLS = True
@@ -137,3 +148,6 @@ EMAIL_HOST_PASSWORD = "chbwasozskglddsa"
 
 JET_INDEX_DASHBOARD = 'app.dashboard.CustomDashboard'
 JET_SIDE_MENU_COMPACT = True
+=======
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+>>>>>>> adabc05409fff91934323e19406acf814d1e1901
