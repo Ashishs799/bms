@@ -1,0 +1,92 @@
+{% load static %}
+<div class="total-products-widget">
+  <h2 style="display: flex; align-items: center; justify-content: center;"><img src="{% static 'app/images/icons/totalprod2.png' %}" alt="total_prod" style="margin-right: 10px;">TOTAL PRODUCTS</h2>
+  <div class="total-products-value">{{ total_products }}</div>
+</div>
+
+
+<style>
+  .total-products-widget {
+    background-color: #63C7FF;
+    border: 1px solid #63C7FF;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+    padding: 12px;
+  }
+
+  .total-products-widget h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000;
+    font-family: Georgia, serif;
+  }
+
+  .total-products-value {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+  }
+    .dashboard-item {
+    width: 25rem;
+
+  }
+  .sidebar-link:visited {
+    background-color: #EEE1BA;
+  }
+  .sidebar-section{
+    background-color: #faebd7;
+    border-bottom: 0.07143rem solid #894e3f2b;
+  }
+
+  .sidebar-wrapper{
+    background-color: #faebd7;
+  }
+
+  #branding{
+    background-color: #894E3F;
+  }
+
+ .sidebar-link-label {
+    color: #894E3F;
+ }
+ .sidebar-title {
+  display: none;
+}
+.sidebar-link-icon{
+  color: #ff7878;
+}
+
+#branding-menu {
+  color: #fff;
+}
+#branding a, #branding a:visited {
+  color: #fff;
+}
+
+.sidebar-right-arrow {
+  color: #894E3F;
+}
+
+#container {
+  background-color: #fff;
+}
+.reset-dashboard-link-icon {
+  display : none;
+}
+.dashboard-tools .button {
+  display : none;
+}
+.select2-container--jet .select2-selection .select2-selection__rendered {
+  display : none;
+}
+.select2-container .select2-selection--single {
+  display : none;
+}
+.dashboard-item-header {
+  display: none;
+}
+
+</style>
